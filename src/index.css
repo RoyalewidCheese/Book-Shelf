@@ -12,7 +12,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 100px;
   background-color: #a3e0ff;
   padding-top: 2rem;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -21,16 +21,15 @@
 }
 
 .navbar-brand {
-  font-size: 10rem; /* Increased font size for a logo effect */
-  font-weight: bold; /* Bold to emphasize as a logo */
-  color: #333;
-  padding-left: 1rem;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #ffffff;
   margin-bottom: 1rem;
-  text-transform: uppercase; /* Make it stand out as a logo */
-  letter-spacing: 1px; /* Add some spacing between letters */
+  text-transform: uppercase;
+  letter-spacing: 1px; 
 }
 
-.navbar-links {
+/* .navbar-links {
   list-style: none;
   padding-left: 1rem;
 }
@@ -41,7 +40,7 @@
 
 .navbar-links li a {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   font-size: 1rem;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -50,7 +49,7 @@
 .navbar-links li a:hover {
   color: brown;
   text-decoration: none;
-}
+} */
 
 
 .main-layout {
@@ -104,7 +103,7 @@
 
 .book-images {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+  grid-template-columns: repeat(5, 1fr); /* 3 columns by default */
   gap: 20px;
   margin-top: 20px;
 }

@@ -154,30 +154,46 @@ const MyLibrary = ({}) => {
     <div>
     <h1 style={{ marginTop: '20px', marginBottom: '10px' }}>Favourite Books</h1>
     {favouriteBooks.length > 0 ? (
-        <Row className="mt-4 g-0">  {/* 'g-0' removes gutter space between columns */}
-                {favouriteBooks.map((book, index) => (
-                    <Col key={index} className="p-0 col-auto">
-    <Card style={{ display: 'inline-block', height: '300px' }} className='border-white'>
-                        <div className="d-flex justify-content-center">
-                            <Card.Img 
-                                style={{ maxHeight: '250px', width: '200px', maxWidth: '100%' }} 
-                                variant="top" 
-                                src={book.imgUrl} 
-                                alt={book.caption} 
-                            />
-                        </div>
-                        <Card.Body>
-                            <Card.Title>{book.caption}</Card.Title>
-                            <div className="d-flex justify-content-center">
-                                <button onClick={() => handleDeleteFromFavs(book.id)} className="btn btn-outline-danger">
-                                    <FontAwesomeIcon icon={faTrash} />
-                                </button>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            ))}
-        </Row>
+        <Row className="mt-4 g-3"> {/* 'g-3' adds a consistent gutter space between columns */}
+        {favouriteBooks.map((book, index) => (
+          <Col key={index} className="p-2 col-auto"> {/* Use 'p-2' to add padding around each card */}
+            <Card style={{ height: '300px', width: '200px' }} className="border-white mx-auto">
+              <div className="d-flex justify-content-center">
+                <Card.Img
+                  style={{
+                    maxHeight: '250px',
+                    width: '100%',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  }}
+                  variant="top"
+                  src={book.imgUrl}
+                  alt={book.caption}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'scale(1.05)';
+                    e.target.style.boxShadow = '0px 4px 15px rgba(0, 0, 0, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'scale(1)';
+                    e.target.style.boxShadow = 'none';
+                  }}
+                />
+              </div>
+              <Card.Body>
+                <Card.Title className="text-center text-truncate">{book.caption}</Card.Title>
+                <div className="d-flex justify-content-center">
+                  <button
+                    onClick={() => handleDeleteFromFavs(book.id)}
+                    className="btn btn-outline-danger"
+                  >
+                    <FontAwesomeIcon icon={faTrash} />
+                  </button>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+      
     ) : (
         <p>No favourite books added yet.</p>
     )}

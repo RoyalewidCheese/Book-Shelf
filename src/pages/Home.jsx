@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="content">
       <div className="book-of-the-day">
-        <h1 style={{ marginTop: '30px' }}>Books of the Day</h1>
+        <h1 style={{ marginTop: '50px' }} className='text-center'>Books of the Day</h1>
 
         <div className="container mt-5">
           <div className="card border-white" style={{ maxWidth: '540px', height: '330px' }}>
@@ -188,7 +188,7 @@ const Home = () => {
 
       <div className="free-books-container">
         <h1 className="text-center">
-          Free Books
+          New Release
           <span>
             <Link
               to="/MyLibrary"
@@ -209,7 +209,6 @@ const Home = () => {
                 e.target.style.color = '#007BFF'; // Reset color
               }}
             >
-              See All
             </Link>
           </span>
         </h1>
@@ -268,7 +267,7 @@ const Home = () => {
           />
           <img
             className="book-image"
-            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/7F451.jpg"
+            src="https://images-workbench.99static.com/6dNuzlFNLojHX5dCot2WTt2XXTA=/http://s3.amazonaws.com/projects-files/56/5685/568553/fa17fd7a-bd39-40e7-9673-eee40c0c7299.jpg"
             alt=""
           />
 
@@ -279,7 +278,7 @@ const Home = () => {
           />
           <img
             className="book-image"
-            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/31handmaidstale.jpg"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/15psychopathtest.jpg"
             alt=""
           />
           <img
@@ -290,6 +289,56 @@ const Home = () => {
           <img
             className="book-image"
             src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/42winningminds.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/2A-Clockwork-Orange-Book-Cover-368x600-1.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/3px-The_Grapes_of_Wrath_1939_1st_ed_cover.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/11The-Divine-Comedy-Book-Cover-400x600-1.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/10The-Catcher-in-the-Rye-First-Edition-cover-E.-Michael-Mitchell.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/21unbearablelightness.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/26maiden.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/37the-goldfinch.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/39childrenofbloodbone.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://images2.penguinrandomhouse.com/cover/9781984820419"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://images4.penguinrandomhouse.com/cover/9780593491973"
             alt=""
           />
         </div>
