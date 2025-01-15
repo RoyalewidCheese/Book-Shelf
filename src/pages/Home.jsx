@@ -1,63 +1,302 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered1, setIsHovered1] = useState(false);
+  const [isHovered2, setIsHovered2] = useState(false);
+  const [isHoveredRead, setIsHoveredRead] = useState(false);
+  const [isHoveredRead1, setIsHoveredRead1] = useState(false);
+  const [isHoveredRead2, setIsHoveredRead2] = useState(false);
   return (
-    <div className='content'>
-        <div class="search-bar-container">
-  <input type="text" class="search-input" placeholder="Search..."/>
-</div>
- <h1  style={{marginTop:'30px'}}>Book of the Day</h1>
- 
- <div className="container mt-5">
-      <div className="card border-black" style={{ maxWidth: '540px', margin: '0 ',height:'330px' }}>
-        <div className="row g-0">
-          <div className="col-md-4">
-            <img style={{height:'103%'}}
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA1WvLqUSEVh2HYw8QLFExx4AtMRWqLZsa7g&s"
-              className="img-fluid rounded-start"
-              alt="Book Cover"
-            />
+    <div className="content">
+      <div className="book-of-the-day">
+        <h1 style={{ marginTop: '30px' }}>Books of the Day</h1>
+
+        <div className="container mt-5">
+          <div className="card border-white" style={{ maxWidth: '540px', height: '330px' }}>
+            <div className="row g-0">
+              <div className="col-md-4 d-flex">
+                <img
+                  style={{ height: '250px', width: '150px', margin: 'auto 15px' }}
+                  src="https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_UF1000,1000_QL80_.jpg"
+                  className="img-fluid rounded-start"
+                  alt="Book Cover"
+                />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">Ikigai: The Japanese Secret to a Long and Happy Life</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">
+                    Book by Francesc Miralles and Hector Garcia
+                  </h6>
+                  <p className="card-text">
+                    The book reveals how discovering your ikigai—a balance of passion, vocation, mission, and profession—leads to a fulfilling life.
+                    Inspired by Okinawa's centenarians, it emphasizes purpose, mindfulness, and community for happiness and longevity.
+                  </p>
+                  <Link to="/MyLibrary">
+                    <button
+                      style={{
+                        padding: '10px 15px',
+                        borderRadius: '10px',
+                        background: isHovered ? '#82cfff' : 'white',
+                        borderColor: 'black',
+                        cursor: 'pointer',
+                      }}
+                      onMouseEnter={() => setIsHovered(true)}
+                      onMouseLeave={() => setIsHovered(false)}
+                    >
+                      Add to Library
+                    </button>
+                  </Link>
+                  <Link
+                    to="https://dn790007.ca.archive.org/0/items/ikigai-the-japanese-secret-to-a-long-and-happy-life-pdfdrive.com/Ikigai%20_%20the%20Japanese%20secret%20to%20a%20long%20and%20happy%20life%20%28%20PDFDrive.com%20%29.pdf" target='_blank'
+                    style={{ marginLeft: '20px' }}
+                  >
+                    <button
+                      style={{
+                        padding: '10px 15px',
+                        borderRadius: '10px',
+                        background: isHoveredRead ? '#f0e68c' : 'white', // Change color on hover
+                        borderColor: 'black',
+                        cursor: 'pointer',
+                      }}
+                      onMouseEnter={() => setIsHoveredRead(true)}
+                      onMouseLeave={() => setIsHoveredRead(false)}
+                    >
+                      Read
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">THE ALCHEMIST</h5>
-              <h6 className="card-subtitle mb-2 text-muted">by Paulo Coelho </h6>
-              <p className="card-text">
-              The Alchemist is a story of following one's dreams to find one's purpose in life. The main character, Santiago, is a Spanish shepherd boy who leaves behind his job and family to search for his Personal Legend, a hidden treasure that he believes is buried near the pyramids in Egypt.
-              </p>
-            <Link to='/MyLibrary' style={{}}><button style={{padding:'10px 15px',borderRadius:'10px',background:'#DFD0C0',borderColor:'black'}} >Add to Library</button></Link>
-            <Link to='https://ia801006.us.archive.org/13/items/OceanofPDF.comTheAlchemist/_OceanofPDF.com_The_Alchemist.pdf' style={{marginLeft:'20px'}}><button style={{padding:'10px 15px',borderRadius:'10px',background:'white',borderColor:'black'}} >Read</button></Link>
-            
+          <div className="card border-white" style={{ maxWidth: '540px', height: '330px' }}>
+            <div className="row g-0">
+              <div className="col-md-4 d-flex">
+                <img
+                  style={{ height: '250px', width: '150px', margin: 'auto 15px' }}
+                  src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/18The-Invisible-Man-Book-Cover-385x600-1.jpg"
+                  className="img-fluid rounded-start"
+                  alt="Book Cover"
+                />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">Invisible Man</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">
+                    Book By Ralph Ellison
+                  </h6>
+                  <p className="card-text">
+                    The book cover, designed by Edward McKnight Kauffer in 1952, features a man in shadows, symbolizing the main character, Griffin, who learns to make himself invisible. The design reflects the theme of the book.
+                  </p>
+                  <Link to="/MyLibrary">
+                    <button
+                      style={{
+                        padding: '10px 15px',
+                        borderRadius: '10px',
+                        background: isHovered1 ? '#82cfff' : 'white',
+                        borderColor: 'black',
+                        cursor: 'pointer',
+                      }}
+                      onMouseEnter={() => setIsHovered1(true)}
+                      onMouseLeave={() => setIsHovered1(false)}
+                    >
+                      Add to Library
+                    </button>
+                  </Link>
+                  <Link
+                    to="https://modernforms.org/wp-content/uploads/Ralph-Ellison-Invisible-Man-Text.pdf" target='_blank'
+                    style={{ marginLeft: '20px' }}
+                  >
+                    <button
+                      style={{
+                        padding: '10px 15px',
+                        borderRadius: '10px',
+                        background: isHoveredRead1 ? '#f0e68c' : 'white', // Change color on hover
+                        borderColor: 'black',
+                        cursor: 'pointer',
+                      }}
+                      onMouseEnter={() => setIsHoveredRead1(true)}
+                      onMouseLeave={() => setIsHoveredRead1(false)}
+                    >
+                      Read
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="card border-white" style={{ maxWidth: '540px', height: '330px' }}>
+            <div className="row g-0">
+              <div className="col-md-4 d-flex">
+                <img
+                  style={{ height: '250px', width: '150px', margin: 'auto 15px' }}
+                  src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/28intuition.jpg"
+                  className="img-fluid rounded-start"
+                  alt="Book Cover"
+                />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">Intuition: Access your inner wisdom. Trust your instincts. Find your path.</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">
+                    Book By Amisha Ghadiali
+                  </h6>
+                  <p className="card-text">
+                    The book cover, illustrated by Eiko Ojala, uses shades of blue to depict a woman's silhouette, symbolizing the theme of tuning inner self for mental, emotional, and spiritual growth. It's a thoughtfully designed and impactful cover.
+                  </p>
+                  <Link to="/MyLibrary">
+                    <button
+                      style={{
+                        padding: '10px 15px',
+                        borderRadius: '10px',
+                        background: isHovered2 ? '#82cfff' : 'white',
+                        borderColor: 'black',
+                        cursor: 'pointer',
+                      }}
+                      onMouseEnter={() => setIsHovered2(true)}
+                      onMouseLeave={() => setIsHovered2(false)}
+                    >
+                      Add to Library
+                    </button>
+                  </Link>
+                  <Link
+                    to="https://www.ebooks.com/en-us/book/210169351/intuition/amisha-ghadiali/" target='_blank'
+                    style={{ marginLeft: '20px' }}
+                  >
+                    <button
+                      style={{
+                        padding: '10px 15px',
+                        borderRadius: '10px',
+                        background: isHoveredRead2 ? '#f0e68c' : 'white', // Change color on hover
+                        borderColor: 'black',
+                        cursor: 'pointer',
+                      }}
+                      onMouseEnter={() => setIsHoveredRead2(true)}
+                      onMouseLeave={() => setIsHoveredRead2(false)}
+                    >
+                      Read
+                    </button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div className="free-books-container">
+        <h1 className="text-center">
+          Free Books
+          <span>
+            <Link
+              to="/MyLibrary"
+              style={{
+                fontSize: '20px',
+                textDecoration: 'none',
+                color: '#007BFF', // Initial color
+                marginLeft: '10px', // Space between text and link
+                marginTop: '10px', // Gap between "Free Books" and link
+                cursor: 'pointer', // Pointer cursor on hover
+                fontWeight: 'bold', // Bold for emphasis
+                transition: 'color 0.3s', // Smooth transition for color change
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.color = '#0056b3'; // Darker color on hover
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.color = '#007BFF'; // Reset color
+              }}
+            >
+              See All
+            </Link>
+          </span>
+        </h1>
+
+
+        <div className="book-images">
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/7F451.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/16nightshift.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://i0.wp.com/www.printmag.com/wp-content/uploads/2024/07/GodofWoods.jpg?w=994&quality=89&ssl=1"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://m.media-amazon.com/images/I/91CqNElQaKL._AC_UF1000,1000_QL80_.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://i0.wp.com/www.printmag.com/wp-content/uploads/2024/07/Dismantling.jpg?w=978&quality=89&ssl=1"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/19teaspoonofearthandsea.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/33Jurassic-Park-Book-Cover-458x600-1.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/41ghostforest.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/45Morethanthis.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/48smallfortune.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/7F451.jpg"
+            alt=""
+          />
+
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/25masterandmargarita.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/31handmaidstale.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/36getintrouble.jpg"
+            alt=""
+          />
+          <img
+            className="book-image"
+            src="https://www.papertrue.com/blog/wp-content/uploads/2023/11/42winningminds.jpg"
+            alt=""
+          />
+        </div>
+      </div>
     </div>
-    <div style={{marginLeft:'700px',marginTop:'-400px',}}>
-    <h1 >Free Books <span>    <Link to='/MyLibrary' style={{fontSize:'20px',marginLeft:'150px',textDecoration:'none',color:'gray'}}>See All</Link>
-    </span></h1>
-     
-    <img style={{height:'200px',}} src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRz0ny4RFBo1u0zPQTZcEkMLvtjK65ex14u_uJdB-d0E4YzH4pAtpwaBu_Z8Crpv-IzDBwFPdaBnz8TAXWb_asuQ00aUKUV1rtZ99ZHBMj_qZVgzCYgkwS8Tg" alt="" />
-    <img style={{height:"200px",marginLeft:'10px' }} src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSqJ3_8p7p0VAduJF88ab8EGx0ASJDY0avF3GKd-J_eDAfEq-uzHmc9Soz9m0HE5mXN-E-xdG4_0FQ5Zs6rd4690_seWetaIoOY9qZaaEo" alt="" />
-    <img style={{height:"200px",marginLeft:'10px'}} src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS49iP8nUOPKC-M3e_GPb7kTVIXQ1af_MZhyY_JRUAygpmp56ejRweoGx8RRJG_OHPCgFZRzpLNzEvasoHpvpXQy8K7B9Lx6er96CP9v3M" alt="" /> <br />
-    <img style={{height:"200px",marginTop:'20px'}} src="https://99bookstores.com/cdn/shop/files/91bYsX41DVL._SL1500.jpg?v=1698414556&width=1920" alt="" />
-    <img style={{height:'200px',marginLeft:'35px',marginTop:'20px'}} src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT7oMpC0aa6N2WZOt8saEaTfh_aoZV1XQnkNZ_Dy--ZZVUGIzw3doLKLeX4pELaOuY_SRQREi07JZmZ7ka3-4K7_PYlApjTiqpvVsS_ZmWvQ-2DTUZkVJUJmw" alt="" />
-    <img style={{height:'200px',marginLeft:'310px',marginTop:'-225px'}} src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSSk6VZuy07w6PZZ4vGQNWG-MoEGuwxuE3TD_9MEqcRLIyfMpheoD0KokR-JUF2me24aW32_6EJZsNi0RN2fYgqz2k75ELVUp1IAuO2VNVF" alt="" />
 
+  );
+};
 
-    </div>
-
-  
-
-
-
-
-
-
-
-    </div>
-  )
-}
-
-export default Home
+export default Home;
